@@ -14,6 +14,14 @@ class PlageHoraire extends Model
         'week_days' => 'array',
         'date' => 'date',
     ];
-    public function address() { return $this->belongsTo(Address::class); }
-    public function motifs() { return $this->belongsToMany(Motif::class, 'plage_horaire_motif'); }
+
+    public function address() {
+        return $this->belongsTo(Address::class);
+    }
+    public function motifs() {
+        return $this->belongsToMany(Motif::class, 'plage_horaire_motif');
+    }
+    public function rendezVous() {
+        return $this->hasMany(RendezVous::class, 'plage_horaire_id', 'id');
+    }
 }

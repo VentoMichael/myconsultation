@@ -8,4 +8,11 @@ class Address extends Model
 {
     use HasFactory;
     protected $fillable = ['name'];
+
+    public function plageHoraires() {
+        return $this->hasMany(PlageHoraire::class);
+    }
+    public function rendezVous() {
+        return $this->hasMany(RendezVous::class);
+    }
 }

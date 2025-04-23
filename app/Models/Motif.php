@@ -8,4 +8,8 @@ class Motif extends Model
 {
     use HasFactory;
     protected $fillable = ['name', 'duration_minutes'];
+
+    public function plageHoraires() {
+        return $this->belongsToMany(PlageHoraire::class, 'plage_horaire_motif');
+    }
 }

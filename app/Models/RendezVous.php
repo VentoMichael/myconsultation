@@ -13,5 +13,8 @@ class RendezVous extends Model
         'start' => 'datetime',
         'end' => 'datetime',
     ];
-    public function address() { return $this->belongsTo(Address::class); }
+
+    public function address() {
+        return $this->belongsTo(Address::class);
+    }
 }
